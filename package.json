@@ -4,6 +4,8 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "abcnode": "0.0.2",
+    "handlebars": "^4.0.5",
     "jquery": "^2.2.0"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "time-grunt": "^1.3.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "abcnode": "0.0.2"
   }
 }
