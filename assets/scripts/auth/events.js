@@ -5,6 +5,9 @@ const api = require('./api.js');
 const ui = require('./ui.js');
 
 const onRegister = () => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  console.log(data);
   
 };
 
@@ -24,8 +27,8 @@ const addHandlers = () => {
       $(this).addClass('active');
       e.preventDefault();
     });
-
   });
+  $('#register-form').on('submit', onRegister);
 };
 
 module.exports = {
