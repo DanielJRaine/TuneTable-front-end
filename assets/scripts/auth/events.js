@@ -23,11 +23,11 @@ $(this).addClass('active');
 const onRegister = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log("on register data is " + data);
+  // console.log("onRegister data is " + data);
+  api.register(data)
+    .done(ui.registerSuccess)
+    .fail(ui.failure);
   loadLoginForm(event);
-  api.register(data);
-    // .done(ui.registerSuccess)
-    // .fail(ui.failure);
 };
 
 const addHandlers = () => {
