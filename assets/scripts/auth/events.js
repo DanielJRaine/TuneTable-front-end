@@ -4,33 +4,36 @@ const getFormFields = require('../../../lib/get-form-fields.js');
 const api = require('./api.js');
 const ui = require('./ui.js');
 
-const loadRegisterForm = function(e) {
+const loadRegisterForm = function(event) {
+  event.preventDefault();
   $("#register-form").delay(100).fadeIn(100);
   $("#login-form").fadeOut(100);
   $('#login-form-link').removeClass('active');
   $(this).addClass('active');
-  e.preventDefault();
 };
 
-const loadLoginForm = function(e) {
-  $("#login-form").delay(100).fadeIn(100);
+const loadLoginForm = function(event) {
+  event.preventDefault();
+$("#login-form").delay(100).fadeIn(100);
 $("#register-form").fadeOut(100);
 $('#register-form-link').removeClass('active');
 $(this).addClass('active');
-e.preventDefault();
 };
 
-const onRegister = () => {
+const onRegister = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
-  loadLoginForm();
+  console.log("on register data is " + data);
+  loadLoginForm(event);
+  api.register(data);
+    // .done(ui.registerSuccess)
+    // .fail(ui.failure);
 };
 
 const addHandlers = () => {
   $(function() {
-    $('#login-form-link').click(loadLoginForm);
-    $('#register-form-link').click(loadRegisterForm);
+    $('#login-form-link').on('click', loadLoginForm);
+    $('#register-form-link').on('click', loadRegisterForm);
   });
   $('#register-form').on('submit', onRegister);
 };
