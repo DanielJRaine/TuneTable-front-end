@@ -40,7 +40,9 @@ const onLogin = (event) => {
 
 const onLogout = (event) => {
   event.preventDefault();
-  api.logout();
+  api.logout()
+    .done(ui.logoutSuccess)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {

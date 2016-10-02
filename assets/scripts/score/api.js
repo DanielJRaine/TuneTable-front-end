@@ -7,6 +7,9 @@ const searchScore = (data) => {
     url: app.host + '/tune',
     method: 'GET',
     data: data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 

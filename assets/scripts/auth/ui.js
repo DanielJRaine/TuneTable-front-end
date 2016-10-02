@@ -8,7 +8,7 @@ const registerSuccess = (data) => {
 
 const loginSuccess = (data) => {
   app.user = data.user;
-  console.log(data + " has successfully logged in");
+  console.log(app.user + " has successfully logged in");
 };
 
 const logoutSuccess = () => {
