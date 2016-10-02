@@ -8,8 +8,10 @@ require('./example');
 
 const scoreEvents = require('./score/events.js');
 const fileUploadEvents = require('./file-upload/events.js');
+const authEvents = require('./auth/events.js');
 
 $(() => {
   scoreEvents.addHandlers();
   fileUploadEvents.addHandlers();
+  authEvents.addHandlers();
 });
