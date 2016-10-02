@@ -30,15 +30,26 @@ const onRegister = (event) => {
   loadLoginForm(event);
 };
 
+const onLogin = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.login(data)
+    .done(ui.loginSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $(function() {
     $('#login-form-link').on('click', loadLoginForm);
     $('#register-form-link').on('click', loadRegisterForm);
   });
   $('#register-form').on('submit', onRegister);
+  
+  $('#login-form').on('submit', onLogin);
 };
 
 module.exports = {
   addHandlers,
   onRegister,
+  onLogin,
 };

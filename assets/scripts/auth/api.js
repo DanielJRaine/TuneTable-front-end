@@ -10,6 +10,15 @@ const register = (data) => {
   });
 };
 
+const login = (data) => {
+  return $.ajax({
+    url: app.host + '/sign-in',
+    method: 'POST',
+    data: data,
+  });
+};
+
 module.exports = {
   register,
+  login,
 };
