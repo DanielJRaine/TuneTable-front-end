@@ -35,35 +35,52 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
           <!-- <div class="row">         -->
-            <div class="navbar-header row">
-                
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+          <div class="navbar-header">
+              
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="http://placehold.it/150x50&text=TuneTable" alt="TuneTable">
+            </a>
+            
+            <!-- <div class="input-group file-input-form col-lg-3 col-md-offset-11" style="margin-top: 1em;">
+                <span class="input-group-btn">
+                <button id="file-button-browse" type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-th"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=TuneTable" alt="TuneTable">
-                </a>
-                
-                <div class="input-group file-input-form col-lg-3 col-md-offset-7" style="margin-top: 1em;">
-                    <span class="input-group-btn">
-                    <button id="file-button-browse" type="button" class="btn btn-default">
-                      <span class="glyphicon glyphicon-th"></span>
-                    </button>
-                  </span>
-                  <input type="file" id="file-input-upload" style="display:none">
-                  <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
-                      <span class="glyphicon glyphicon-upload"></span>
-                    </button>
-                  </span>
-                </div>
-            </div>
+              </span>
+              <input type="file" id="file-input-upload" style="display:none">
+              <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
+                  <span class="glyphicon glyphicon-upload"></span>
+                </button>
+              </span>
+            </div> -->
+          </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class=row>
+            
+            <div class="input-group file-input-form col-lg-3 col-md-offset-9" style="margin-top: 1em;">
+                <span class="input-group-btn">
+                <button id="file-button-browse" type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-th"></span>
+                </button>
+              </span>
+              <input type="file" id="file-input-upload" style="display:none">
+              <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
+                  <span class="glyphicon glyphicon-upload"></span>
+                </button>
+              </span>
+            </div>
+            
+            <div class="collapse navbar-collapse col-lg-3 col-lg-offset-9" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
@@ -72,11 +89,11 @@
                         <a href="#">Services</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <button type="submit" class="btn btn-default" id="sign-out">Sign-out</button>
                     </li>
                 </ul>
             </div>
-            
+          </div>
             
             <!-- /.navbar-collapse -->
           <!-- </div> -->
