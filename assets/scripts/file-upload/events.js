@@ -11,10 +11,10 @@ const ui = require('./ui.js');
 // };
 
 const addHandlers = () => {
-  $('#file-input-upload').on('submit', console.log(data))
-}
+  // $('#file-input-upload').on('submit', onFileUpload)
+};
 
 module.exports = {
   addHandlers,
-  onFileUpload,
+  // onFileUpload,
 };
