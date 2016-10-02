@@ -18,7 +18,18 @@ const login = (data) => {
   });
 };
 
+const logout = () => {
+  return $.ajax({
+    url: app.host + '/sign-out/' + app.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
 module.exports = {
   register,
   login,
+  logout,
 };

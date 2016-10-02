@@ -11,6 +11,10 @@ const loginSuccess = (data) => {
   console.log(data + " has successfully logged in");
 };
 
+const logoutSuccess = () => {
+  console.log("Successful logout");
+};
+
 const failure = (error) => {
   console.log(error);
 };
@@ -18,5 +22,6 @@ const failure = (error) => {
 module.exports = {
   registerSuccess,
   loginSuccess,
+  logoutSuccess,
   failure,
 };

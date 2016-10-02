@@ -38,18 +38,25 @@ const onLogin = (event) => {
     .fail(ui.failure);
 };
 
+const onLogout = (event) => {
+  event.preventDefault();
+  api.logout();
+};
+
 const addHandlers = () => {
   $(function() {
     $('#login-form-link').on('click', loadLoginForm);
     $('#register-form-link').on('click', loadRegisterForm);
   });
-  $('#register-form').on('submit', onRegister);
   
+  $('#register-form').on('submit', onRegister);
   $('#login-form').on('submit', onLogin);
+  $('#logout').on('click', onLogout);
 };
 
 module.exports = {
   addHandlers,
   onRegister,
   onLogin,
+  onLogout,
 };
