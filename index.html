@@ -50,14 +50,14 @@
                 
                 <div class="input-group file-input-form col-lg-3 col-md-offset-7" style="margin-top: 1em;">
                     <span class="input-group-btn">
-                    <button id="fake-file-button-browse" type="button" class="btn btn-default">
+                    <button id="file-button-browse" type="button" class="btn btn-default">
                       <span class="glyphicon glyphicon-th"></span>
                     </button>
                   </span>
-                  <input type="file" id="files-input-upload" style="display:none">
-                  <input type="text" id="fake-file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
+                  <input type="file" id="file-input-upload" style="display:none">
+                  <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
                   <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" disabled="disabled" id="fake-file-button-upload">
+                    <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
                       <span class="glyphicon glyphicon-upload"></span>
                     </button>
                   </span>
@@ -92,15 +92,15 @@
     <br />
     
     <script type="text/javascript">
-    // Fake file upload
-    document.getElementById('fake-file-button-browse').addEventListener('click', function() {
-    	document.getElementById('files-input-upload').click();
+    // file upload
+    document.getElementById('file-button-browse').addEventListener('click', function() {
+    	document.getElementById('file-input-upload').click();
     });
 
-    document.getElementById('files-input-upload').addEventListener('change', function() {
-    	document.getElementById('fake-file-input-name').value = this.value;
+    document.getElementById('file-input-upload').addEventListener('change', function() {
+    	document.getElementById('file-input-name').value = this.value;
     	
-    	document.getElementById('fake-file-button-upload').removeAttribute('disabled');
+    	document.getElementById('file-button-upload').removeAttribute('disabled');
     });
     </script>
       

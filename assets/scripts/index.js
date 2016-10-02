@@ -7,7 +7,9 @@
 require('./example');
 
 const scoreEvents = require('./score/events.js');
+const fileUploadEvents = require('./file-upload/events.js');
 
 $(() => {
   scoreEvents.addHandlers();
+  fileUploadEvents.addHandlers();
 });
