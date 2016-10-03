@@ -1,12 +1,31 @@
 'use strict';
 let app = require('../app.js');
 
+let tune_data = {
+  ABCnotation: '',
+  user_id: '',
+  tuneTitleT: '',
+  composerC: '',
+  originO: '',
+  areaA: '',
+  meterM: '',
+  unitNoteLengthL: '',
+  tempoQ: '',
+  partsP: '',
+  transcriptionZ: '',
+  notesN: '',
+  groupG: '',
+  historyH: '',
+  keyK: '',
+  rhythmR: '',
+};
   
 const fileUpload = (fileText) => {
   parseFile(fileText);
   tune_data.user_id = app.user.id;
-  let data = tune_data;
-  console.log(tune_data);
+  // let data = tune_data
+  let data = {tune_data: tune_data};
+  console.log(data);
   return $.ajax({
     url: app.host + '/tunes',
     method: 'POST',
@@ -17,7 +36,6 @@ const fileUpload = (fileText) => {
   });
 };
 
-let tune_data = {};
 let parseFile = function(score) {
   let scoreArray = score.split('\n');
   tune_data.ABCnotation = score.slice(score.indexOf('|'));
