@@ -1,8 +1,12 @@
 'use strict';
 let app = require('../app.js');
 
+  
 const fileUpload = (fileText) => {
-  let data = {tune_data: {name: "MacArthur Road", ABCnotation: fileText, user_id: app.user.id}};
+  parseFile(fileText);
+  tune_data.user_id = app.user.id;
+  let data = tune_data;
+  console.log(tune_data);
   return $.ajax({
     url: app.host + '/tunes',
     method: 'POST',
@@ -11,6 +15,30 @@ const fileUpload = (fileText) => {
     },
     data: data
   });
+};
+
+let tune_data = {};
+let parseFile = function(score) {
+  let scoreArray = score.split('\n');
+  tune_data.ABCnotation = score.slice(score.indexOf('|'));
+  return scoreArray.forEach(matchKeys);
+};
+
+let matchKeys = function(element, index, array) {
+  if(element.startsWith('T')) { tune_data.tuneTitleT = element.slice(2);}
+  if(element.startsWith('C')) { tune_data.composerC = element.slice(2);}
+  if(element.startsWith('O')) { tune_data.originO = element.slice(2);}
+  if(element.startsWith('A')) { tune_data.areaA = element.slice(2);}
+  if(element.startsWith('M')) { tune_data.meterM = element.slice(2);}
+  if(element.startsWith('L')) { tune_data.unitNoteLengthL = element.slice(2);}
+  if(element.startsWith('Q')) { tune_data.tempoQ = element.slice(2);}
+  if(element.startsWith('P')) { tune_data.partsP = element.slice(2);}
+  if(element.startsWith('Z')) { tune_data.transcriptionZ = element.slice(2);}
+  if(element.startsWith('N')) { tune_data.notesN = element.slice(2);}
+  if(element.startsWith('G')) { tune_data.groupG = element.slice(2);}
+  if(element.startsWith('H')) { tune_data.historyH = element.slice(2);}
+  if(element.startsWith('K')) { tune_data.keyK = element.slice(2);}
+  if(element.startsWith('R')) { tune_data.rhythmR = element.slice(2);}
 };
 
 module.exports = {
