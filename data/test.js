@@ -13,8 +13,25 @@ K:D
       B>cd e>fg | A>Bc d2A | B2B A>GA | D3-D2  :|
 |: F/D/ | A2A  A2A | A3-A2  B/A/ | d2d d>ef | d3-d2 A |
           B>cd e>fg| A>Bc d2A | B2G A2A  | D3-D2 :|`;
+let tune_data = {
+  tuneTitleT: '',
+  composerC: '',
+  originO: '',
+  areaA: '',
+  meterM: '',
+  unitNoteLengthL: '',
+  tempoQ: '',
+  partsP: '',
+  transcriptionZ: '',
+  notesN: '',
+  groupG: '',
+  historyH: '',
+  keyK: '',
+  rhythmR: '',
+};
 
 let matchKeys = function(element, index, array) {
+  if(element.startsWith('T')) { tune_data.tuneTitleT = element.slice(2);}
   if(element.startsWith('T')) { tune_data.tuneTitleT = element.slice(2);}
   if(element.startsWith('C')) { tune_data.composerC = element.slice(2);}
   if(element.startsWith('O')) { tune_data.originO = element.slice(2);}
@@ -30,8 +47,6 @@ let matchKeys = function(element, index, array) {
   if(element.startsWith('K')) { tune_data.keyK = element.slice(2);}
   if(element.startsWith('R')) { tune_data.rhythmR = element.slice(2);}
 };
-
-let tune_data = {};
 
 let parseFile = function(score) {
   let scoreArray = score.split('\n');
