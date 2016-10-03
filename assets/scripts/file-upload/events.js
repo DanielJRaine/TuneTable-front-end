@@ -18,6 +18,7 @@ const onFileUpload = (event) => {
 
 const addHandlers = () => {
   $('#file-button-upload').on('click', onFileUpload);
+  
 };
 
 module.exports = {
