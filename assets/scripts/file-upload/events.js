@@ -9,7 +9,10 @@ const onFileUpload = (event) => {
   
   fileReader.readAsText(selectedFile);
   fileReader.onload = function(event) {
-    console.log(event.target.result);
+    let fileText = event.target.result;
+    api.fileUpload(fileText)
+      .done(ui.fileUploadSuccess)
+      .fail(ui.failure);
   };
 };
 
