@@ -1,23 +1,21 @@
 'use strict';
 const app = require('../app.js');
+// const template = require('lodash.template');
+const _ = require('lodash');
 
 const displayScore = (data) => {
   app.tune = data.tune;
   // ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
   // see https://github.com/paulrosen/abcjs/blob/master/api.md for documentation
-  // create a template that calls a partial
-  // create a partial (something that happens multiple times).
-  // require templates in ui
-  // <h1> my partial </h1>
-  //  {{#each scores}}
-  //    {{>scores_partial}}
-  //  {{/each}}
 
-  // {{}}
-  // have the partial create buttons for delete/whatever
-  // in your html, create a 'score' div that will contain your scores
-
-  ABCJS.renderAbc('score-display-1', app.tune.ABCnotation, '', {staffwidth: 650});
+  let template = _.template("<% ABCJS.renderAbc('score-display-1', ABCnotation, '', {staffwidth: 650}); %>");
+  
+    // ABCJS.renderAbc('score-display-1', data.tune.ABCnotation, '', {staffwidth: 650});
+    let compiled_html = template({
+        ABCnotation: data.tune.ABCnotation,
+      });
+      
+  $('.music-box').append(compiled_html);
 };
 
 const failure = (error) => {
