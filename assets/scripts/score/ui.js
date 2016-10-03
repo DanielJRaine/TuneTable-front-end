@@ -13,16 +13,16 @@ const displayScore = (data) => {
   let compiledMusicBoxTemplate = musicBoxTemplate({
     numberOfScoreViews: numberOfScoreViews,
   });
-  $('.music-box').append(compiledMusicBoxTemplate);
+  $('.music-box-'+numberOfScoreViews).append(compiledMusicBoxTemplate);
   
-  //
-  // let scoreTemplate = _.template("<% ABCJS.renderAbc('score-display-numberOfScoreViews>, ABCnotation, '', {staffwidth: 650}); %>");
+  // let scoreTemplate = _.template("<% ABCJS.renderAbc('score-display-' + numberOfScoreViews, ABCnotation, '', {staffwidth: 650}); %>");
   // let compiledScoreTemplate = scoreTemplate({
   //     ABCnotation: data.tune.ABCnotation,
+  //     numberOfScoreViews: numberOfScoreViews,
   //   });
   // $('.music-box').append(compiledScoreTemplate);
   
-  // ABCJS.renderAbc('score-display-1', data.tune.ABCnotation, '', {staffwidth: 650});
+  ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
 };
 
 const failure = (error) => {
