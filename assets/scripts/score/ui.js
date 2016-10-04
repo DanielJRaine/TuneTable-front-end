@@ -22,7 +22,7 @@ const displayScore = (data) => {
   //   });
   // $('.music-box').append(compiledScoreTemplate);
   
-  ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
+  ABCJS.renderAbc('score-display-' + numberOfScoreViews, app.tune.ABCnotation, '', {staffwidth: 650});
 };
 
 const failure = (error) => {

@@ -38,7 +38,8 @@ const fileUpload = (fileText) => {
 
 let parseFile = function(score) {
   let scoreArray = score.split('\n');
-  tune_data.ABCnotation = score.slice(score.indexOf('|'));
+  // tune_data.ABCnotation = score.slice(score.indexOf('|'));
+  tune_data.ABCnotation = score;
   return scoreArray.forEach(matchKeys);
 };
 
