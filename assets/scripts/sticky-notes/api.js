@@ -2,8 +2,6 @@
 let app = require('../app.js');
 
 const submitStickyNote1 = (tune_data) => {
-  console.log('tune_data1 is: ');
-  console.log(tune_data);
   let data = tune_data;
   
   return $.ajax({
@@ -16,10 +14,8 @@ const submitStickyNote1 = (tune_data) => {
   });
 };
 
-const submitStickyNote2 = (data) => {
-  console.log('data1 is: ');
-  console.log(data);
-  debugger;
+const submitStickyNote2 = (tune_data) => {
+  let data = tune_data;
   
   return $.ajax({
     url: app.host + '/tunes/' + app.tune2.id,
@@ -27,14 +23,12 @@ const submitStickyNote2 = (data) => {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data.tune_data,
+    data: data,
   });
 };
 
-const submitStickyNote3 = (data) => {
-  console.log('data1 is: ');
-  console.log(data);
-  debugger;
+const submitStickyNote3 = (tune_data) => {
+  let data = tune_data;
   
   return $.ajax({
     url: app.host + '/tunes/' + app.tune3.id,
@@ -42,7 +36,7 @@ const submitStickyNote3 = (data) => {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data: data.tune_data,
+    data: data,
   });
 };
 
