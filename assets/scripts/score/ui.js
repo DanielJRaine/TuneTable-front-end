@@ -1,9 +1,13 @@
 'use strict';
-const app = require('../app.js');
+const app = require('./../app.js');
 // const template = require('lodash.template');
 const _ = require('lodash');
 
-let tunesArray = [app.tune1, app.tune2, app.tune3];
+app.tune1 = {};
+app.tune2 = {};
+app.tune3 = {};
+
+let tunesArray = [app.tune1, app.tune2, app.tune3]; //placed into app.js file
 let numberOfScoreViews = 0;
 
 const displayScore = (data) => {
@@ -15,7 +19,9 @@ const displayScore = (data) => {
     numberOfScoreViews = 0;
     displayScore(data);
   }
-  
+  app.tune1 = tunesArray[0];
+  app.tune2 = tunesArray[1];
+  app.tune3 = tunesArray[2];
   // ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
   // see https://github.com/paulrosen/abcjs/blob/master/api.md for documentation
   let musicBoxTemplate = _.template("<svg id='score-display-<%= numberOfScoreViews %>'>I am an SVG</svg>");
@@ -52,8 +58,10 @@ const displayScore = (data) => {
   // $('.music-box').append(compiledScoreTemplate);
   
   ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
+  
+  console.log('app is: ');
+  console.log(app);
 };
-
 const failure = (error) => {
   console.error(error);
 };
