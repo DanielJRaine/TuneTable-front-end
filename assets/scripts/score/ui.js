@@ -5,7 +5,8 @@ const _ = require('lodash');
 
 let numberOfScoreViews = 0;
 const displayScore = (data) => {
-  app.tune = data.tune;
+  // app.tune = data.tune;
+  debugger;
   numberOfScoreViews += 1;
   // ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
   // see https://github.com/paulrosen/abcjs/blob/master/api.md for documentation
@@ -22,7 +23,7 @@ const displayScore = (data) => {
   //   });
   // $('.music-box').append(compiledScoreTemplate);
   
-  ABCJS.renderAbc('score-display-' + numberOfScoreViews, app.tune.ABCnotation, '', {staffwidth: 650});
+  ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
 };
 
 const failure = (error) => {

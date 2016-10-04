@@ -1,7 +1,7 @@
 'use strict';
 
 const fileUploadSuccess = (data) => {
-  console.log("successfully uploaded file: " + data);
+  // console.log("successfully uploaded file: " + data);
 };
 
 const failure = (error) => {
