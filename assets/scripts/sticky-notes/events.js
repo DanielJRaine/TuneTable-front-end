@@ -7,8 +7,9 @@ const ui = require('./ui.js');
 const onSubmitStickyNote = (event) => {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log('submit sticky with data: '+ data);
-  // api.submitStickyNote(data);
+  api.submitStickyNote(data)
+    .done(ui.submitStickyNoteSuccess)
+    .fail(ui.failure);
 };
 
 const addHandlers = () => {
