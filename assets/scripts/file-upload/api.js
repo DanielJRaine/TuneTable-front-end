@@ -60,6 +60,39 @@ let matchKeys = function(element, index, array) {
   if(element.startsWith('R')) { tune_data.rhythmR = element.slice(2);}
 };
 
+const deleteTune1 = () => {
+  return $.ajax({
+    url: app.host + '/tunes/' + app.tune1.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
+const deleteTune2 = () => {
+  return $.ajax({
+    url: app.host + '/tunes/' + app.tune2.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
+const deleteTune3 = () => {
+  return $.ajax({
+    url: app.host + '/tunes/' + app.tune3.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
+  });
+};
+
 module.exports = {
   fileUpload,
+  deleteTune1,
+  deleteTune2,
+  deleteTune3,
 };

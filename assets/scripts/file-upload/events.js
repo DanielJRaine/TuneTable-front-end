@@ -1,6 +1,7 @@
 'use strict';
 const api = require('./api.js');
 const ui = require('./ui.js');
+const app = require('../app.js');
 
 const onFileUpload = (event) => {
   event.preventDefault();
@@ -16,12 +17,32 @@ const onFileUpload = (event) => {
   };
 };
 
+const onDeleteTune1 = (event) => {
+  event.preventDefault();
+  api.deleteTune1();
+};
+
+const onDeleteTune2 = (event) => {
+  event.preventDefault();
+  api.deleteTune2();
+};
+
+const onDeleteTune3 = (event) => {
+  event.preventDefault();
+  api.deleteTune3();
+};
+
 const addHandlers = () => {
   $('#file-button-upload').on('click', onFileUpload);
-  
+  $('#delete-tune-1').on('click', onDeleteTune1);
+  $('#delete-tune-2').on('click', onDeleteTune2);
+  $('#delete-tune-3').on('click', onDeleteTune3);
 };
 
 module.exports = {
   addHandlers,
   onFileUpload,
+  onDeleteTune1,
+  onDeleteTune2,
+  onDeleteTune3,
 };
