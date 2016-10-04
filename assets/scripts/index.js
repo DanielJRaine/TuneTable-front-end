@@ -9,9 +9,11 @@ require('./example');
 const scoreEvents = require('./score/events.js');
 const fileUploadEvents = require('./file-upload/events.js');
 const authEvents = require('./auth/events.js');
+const stickyNoteEvents = require('./sticky-notes/events.js');
 
 $(() => {
   scoreEvents.addHandlers();
   fileUploadEvents.addHandlers();
   authEvents.addHandlers();
+  stickyNoteEvents.addHandlers();
 });
