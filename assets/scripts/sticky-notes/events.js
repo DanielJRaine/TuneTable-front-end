@@ -13,7 +13,7 @@ const onSubmitStickyNote = (event) => {
 };
 
 const addHandlers = () => {
-  $('#sticky-note-1').on('submit', onSubmitStickyNote);
+  $('.sticky-note').on('submit', onSubmitStickyNote);
 };
 
 module.exports = {

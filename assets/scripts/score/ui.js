@@ -3,10 +3,19 @@ const app = require('../app.js');
 // const template = require('lodash.template');
 const _ = require('lodash');
 
+let tunesArray = [app.tune1, app.tune2, app.tune3];
 let numberOfScoreViews = 0;
+
 const displayScore = (data) => {
-  // app.tune = data.tune;
-  numberOfScoreViews += 1;
+  
+  if (numberOfScoreViews < 3 && data.tune) {
+    numberOfScoreViews += 1;
+    tunesArray[numberOfScoreViews-1] = data.tune;
+  } else {
+    numberOfScoreViews = 0;
+    displayScore(data);
+  }
+  
   // ABCJS.renderAbc(output, tunebookString, parserParams, engraverParams, renderParams)
   // see https://github.com/paulrosen/abcjs/blob/master/api.md for documentation
   let musicBoxTemplate = _.template("<svg id='score-display-<%= numberOfScoreViews %>'>I am an SVG</svg>");
