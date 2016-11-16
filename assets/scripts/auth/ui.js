@@ -11,12 +11,15 @@ const loginSuccess = (data) => {
   console.log(app.user + " has successfully logged in");
   $('.auth-panel').hide();
   $('.search-box').attr('style', 'visibility: visible;');
+  $('#logout').css('visibility', 'visible');
+  $('#file-input').css('visibility', 'visible');
 };
 
 const logoutSuccess = () => {
   console.log("Successful logout");
   $('.auth-panel').show();
   $('.search-box').hide();
+  $('#file-input').css('visibility', 'hidden');
 };
 
 const failure = (error) => {

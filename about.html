@@ -47,34 +47,41 @@
             </a>
           </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class=row>
-
-            <div class="input-group file-input-form col-md-3 col-sm-3 col-lg-3 col-md-offset-9" style="margin-top: 1em;">
+            <div class=row>
+              <div class="search-box col-lg-5 col-md-4 col-sm-5 col-md-offset-2" style="margin-top: 0.5em; visibility: hidden;">
+                <form class="navbar-form" id="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="tune_data[tuneTitleT]" placeholder="Find a tune by name">
+                  </div>
+                  <button type="submit" class="btn btn-default" display="inline-block">Search</button>
+                </form>
+              </div>
+              <div id="file-input" class="input-group file-input-form col-md-3 col-sm-3 col-lg-3 col-md-offset-9" style="margin-top: 1em; visibility: hidden;">
+                  <span class="input-group-btn">
+                  <button id="file-button-browse" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-th"></span>
+                  </button>
+                </span>
+                <input type="file" id="file-input-upload" style="display:none">
+                <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
                 <span class="input-group-btn">
-                <button id="file-button-browse" type="button" class="btn btn-default">
-                  <span class="glyphicon glyphicon-th"></span>
-                </button>
-              </span>
-              <input type="file" id="file-input-upload" style="display:none">
-              <input type="text" id="file-input-name" disabled="disabled" placeholder="Upload an .abc file" class="form-control">
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
-                  <span class="glyphicon glyphicon-upload"></span>
-                </button>
-              </span>
-            </div>
+                  <button type="button" class="btn btn-default" disabled="disabled" id="file-button-upload">
+                    <span class="glyphicon glyphicon-upload"></span>
+                  </button>
+                </span>
+              </div>
 
-            <div class="collapse navbar-collapse col-lg-3 col-lg-offset-9" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <button type="submit"class="btn btn-default" style="margin: 0 10px 10px 0;"><a href="about.html" style="color: black;">About</a></button>
-                    </li>
-                    <li>
-                        <button type="submit" class="btn btn-default" id="logout"><a style="color: black;">Sign-out</a></button>
-                    </li>
-                </ul>
+              <div class="collapse navbar-collapse col-lg-3 col-lg-offset-9" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                      <li>
+                          <button type="submit"class="btn btn-default" style="margin: 0 10px 10px 0;"><a href="index.html" style="color: black;">Back</a></button>
+                      </li>
+                      <li>
+                          <button style="visibility: hidden;" type="submit" class="btn btn-default" id="logout"><a style="color: black;">Sign-out</a></button>
+                      </li>
+                  </ul>
+              </div>
             </div>
-          </div>
 
             <!-- /.navbar-collapse -->
           <!-- </div> -->
@@ -123,7 +130,7 @@ p {
 }
 ul {
   font-weight: 500;
-  font-size: 20px;  
+  font-size: 20px;
 }
 
 .about{
