@@ -11,7 +11,7 @@ let tunesArray = [app.tune1, app.tune2, app.tune3]; //placed into app.js file
 let numberOfScoreViews = 0;
 
 const displayScore = (data) => {
-  
+
   if (numberOfScoreViews < 3 && data.tune) {
     numberOfScoreViews += 1;
     tunesArray[numberOfScoreViews-1] = data.tune;
@@ -29,7 +29,7 @@ const displayScore = (data) => {
     numberOfScoreViews: numberOfScoreViews,
   });
   $('.music-box-'+numberOfScoreViews).append(compiledMusicBoxTemplate);
-  
+
   // let stickyNoteTemplate = _.template(`
   //   <div class="container bootstrap snippet">
   //     <div class="row">
@@ -56,9 +56,9 @@ const displayScore = (data) => {
   //     numberOfScoreViews: numberOfScoreViews,
   //   });
   // $('.music-box').append(compiledScoreTemplate);
-  
+
   ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
-  
+  $('score-display-' + numberOfScoreViews).css('visibility', 'visible');
   console.log('app is: ');
   console.log(app);
 };
