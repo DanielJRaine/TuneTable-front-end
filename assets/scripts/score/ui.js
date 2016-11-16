@@ -60,8 +60,10 @@ const displayScore = (data) => {
   ABCJS.renderAbc('score-display-' + numberOfScoreViews, data.tune.ABCnotation, '', {staffwidth: 650});
   $('#score-display-' + numberOfScoreViews).css('visibility', 'visible');
   $('#sticky-note-' + numberOfScoreViews).css('visibility', 'visible');
-  console.log('app is: ');
-  console.log(app);
+  $('#sticky-text-' + numberOfScoreViews).text(data.tune.notesN);
+
+  console.log('app is: ',app);
+
   $('.music-box-'+numberOfScoreViews).attr('display', 'block');
 };
 const failure = (error) => {
