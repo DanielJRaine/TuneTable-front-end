@@ -20,6 +20,13 @@ const logoutSuccess = () => {
   $('.auth-panel').show();
   $('.search-box').hide();
   $('#file-input').css('visibility', 'hidden');
+  $('#logout').css('visibility', 'hidden');
+  $('#sticky-note-1').css('visibility', 'hidden');
+  $('#sticky-note-2').css('visibility', 'hidden');
+  $('#sticky-note-3').css('visibility', 'hidden');
+  $('.music-box-1').hide();
+  $('.music-box-2').hide();
+  $('.music-box-3').hide();
 };
 
 const failure = (error) => {

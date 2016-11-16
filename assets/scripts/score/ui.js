@@ -64,7 +64,7 @@ const displayScore = (data) => {
 
   console.log('app is: ',app);
 
-  $('.music-box-'+numberOfScoreViews).attr('display', 'block');
+  $('.music-box-'+numberOfScoreViews).show();
 };
 const failure = (error) => {
   console.error(error);
