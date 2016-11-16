@@ -62,6 +62,7 @@ const displayScore = (data) => {
   $('#sticky-note-' + numberOfScoreViews).css('visibility', 'visible');
   console.log('app is: ');
   console.log(app);
+  $('.music-box-'+numberOfScoreViews).attr('display', 'block');
 };
 const failure = (error) => {
   console.error(error);
