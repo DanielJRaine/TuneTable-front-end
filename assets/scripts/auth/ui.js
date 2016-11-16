@@ -10,11 +10,13 @@ const loginSuccess = (data) => {
   app.user = data.user;
   console.log(app.user + " has successfully logged in");
   $('.auth-panel').hide();
+  $('.search-box').attr('style', 'visibility: visible;');
 };
 
 const logoutSuccess = () => {
   console.log("Successful logout");
   $('.auth-panel').show();
+  $('.search-box').hide();
 };
 
 const failure = (error) => {
